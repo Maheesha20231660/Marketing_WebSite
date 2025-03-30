@@ -405,7 +405,7 @@ header {
     border-radius: 0.5rem;
 }
 
-/* Footer */
+/* Footer
 footer {
     background-color: var(--text-dark);
     color: white;
@@ -429,4 +429,43 @@ footer {
 
 .social-icons a:hover {
     color: var(--primary-color);
+} */
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul li {
+    margin: 0 15px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.social-links a:hover {
+    color: #ff9800;
 }
