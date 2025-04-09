@@ -42,7 +42,7 @@
                 <p><h4>We started in 2024 as a small software development agency.SparkM6 Solutions is a leading provider of custom software development services. We specialize in delivering innovative solutions that help businesses streamline their operations and achieve their goals. Our team of experts has extensive experience in developing software for a wide range of industries, from healthcare to finance to manufacturing. Whether you need a mobile app, a web application, or an enterprise management system, we have the skills and expertise to bring your vision to life. Contact us today to learn more about how we can help your business succeed. <h4></p>
         </section> 
         
-        <section id="team" class="team container">
+      <!-- <section id="team" class="team container">
             <div class="section-title">
                 <h2>Meet Our Team</h2>
                 <p>Behind every pixel-perfect solution is our dynamic leadership team driving our mission</p>
@@ -92,7 +92,47 @@
                     <p>CEO and Founder</p>
                 </div>
             </div>
-        </section>
+        </section> -->
+        <!-- About Section -->
+    <section id="about" class="features">
+        <h2 data-aos="fade-up">Meet Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member" data-aos="fade-up">
+                <img src="./Assets/Chethaka.jpg" alt="Chethaka Fernando">
+                <h3>Chethaka Fernando</h3>
+                <p>Team Leader</p>
+            </div>
+ 
+            <div class="team-member" data-aos="fade-up">
+                <img src="../Assets/chanith.webp" alt="Chanith Dulsika">
+                <h3>Chanith Dulsika</h3>
+                <p>Team Member</p>
+            </div>
+ 
+            <div class="team-member" data-aos="fade-up">
+                <img src="./Assets/pawan.png" alt="Danidu Pawan">
+                <h3>Danidu Pawan</h3>
+                <p>Team Member</p>
+            </div>
+            <div class="team-member" data-aos="fade-up">
+                <img src="./Assets/Savini.jpg" alt="Savini Perera">
+                <h3>Savini Perera</h3>
+                <p>Team Member</p>
+            </div>
+            <div class="team-member" data-aos="fade-up">
+                <img src="./Assets/Hiruni.jpg" alt="Hiruni Maheesha">
+                <h3>Hiruni Maheesha</h3>
+                <p>Team Member</p>
+            </div>
+            <div class="team-member" data-aos="fade-up">
+                <img src="./Assets/Isira.jpg" alt="Isira Rashmika">
+                <h3>Isira Rashmika</h3>
+                <p>Team Member</p>
+            </div>
+        </div>
+    </section>
+ 
+ 
 
         <section id ="Services" class="Services">
             <h1 class="Service-title">Our Services</h1>
@@ -331,5 +371,39 @@ serviceButtons.forEach(button => {
         displayServices(service);
     });
 });
+// Team Section Carousel
+const teamContainer = document.querySelector('.team-grid');
+const teamMembers = Array.from(document.querySelectorAll('.team-member'));
+let currentIndex = 0;
+const visibleMembers = 4; // Number of members to display initially
+ 
+function moveTeam() {
+    const memberWidth = teamMembers[0].offsetWidth; // Width of one member
+    teamContainer.style.transition = 'transform 0.5s ease-in-out';
+    teamContainer.style.transform = `translateX(-${memberWidth}px)`;
+ 
+    setTimeout(() => {
+        teamContainer.style.transition = 'none';
+        teamContainer.appendChild(teamMembers[currentIndex]);
+        teamContainer.style.transform = 'translateX(0)';
+        currentIndex = (currentIndex + 1) % teamMembers.length;
+    }, 500); // Match the transition duration
+}
+ 
+// Start the carousel after displaying the initial members
+setTimeout(() => {
+    let carouselInterval = setInterval(moveTeam, 3000);
+ 
+    // Pause on hover
+    teamContainer.addEventListener('mouseenter', () => {
+        clearInterval(carouselInterval);
+    });
+ 
+    teamContainer.addEventListener('mouseleave', () => {
+        carouselInterval = setInterval(moveTeam, 3000);
+    });
+}, 1000); // Adjust the delay as needed to display the initial members
+ 
+
 </script>
 </html>
