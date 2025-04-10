@@ -7,89 +7,73 @@
 
 /* Body */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-/* Header */
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f6fa;
+    color: #2c3e50;
+    line-height: 1.6;
 }
 
 /* Privacy Policy Section */
 .privacy-policy {
-    padding: 40px;
-    background-color: white;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 1200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px 40px;
+    background-color: #ffffff;
+    margin: 40px auto;
+    width: 85%;
+    max-width: 1000px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.privacy-policy:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 }
 
 .privacy-policy h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 3em;
+    margin-bottom: 25px;
+    color: #1a237e;
+    border-bottom: 3px solid #1a237e;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 .privacy-policy h2 {
     font-size: 2em;
-    margin-top: 30px;
-    color: #555;
+    margin-top: 35px;
+    color: #0d47a1;
+    position: relative;
+    padding-left: 10px;
+}
+
+.privacy-policy h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 4px;
+    height: 80%;
+    background-color: #2196f3;
+    border-radius: 2px;
 }
 
 .privacy-policy p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin-top: 10px;
+    font-size: 1.125em;
+    margin-top: 15px;
+    color: #333;
+    text-align: justify;
 }
 
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-}
-
-footer p {
-    font-size: 1em;
-}
-
-footer ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-footer ul li {
-    margin: 0 15px;
-}
-
-footer ul li a {
-    color: white;
+/* Optional: Make links within content stand out */
+.privacy-policy a {
+    color: #1976d2;
     text-decoration: none;
-    padding: 10px;
+    border-bottom: 1px dotted #1976d2;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.privacy-policy a:hover {
+    color: #0d47a1;
+    border-color: #0d47a1;
 }
