@@ -49,6 +49,7 @@ header {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
+    
 }
 
 .nav-links {
@@ -799,4 +800,216 @@ footer {
         font-size: 1.8rem;
     }
 }
+/* About Us Page Styles */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
 
+.about-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.about-header h1 {
+    font-size: 3.5rem;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.about-header h1::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #10b981);
+    bottom: -10px;
+    left: 25%;
+    border-radius: 2px;
+}
+
+.about-content {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+.highlight {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 3rem 0;
+}
+
+.stat-item {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 230px;
+    margin: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3b82f6;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #64748b;
+}
+
+.team-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: #1e293b;
+}
+
+.team-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.company-values {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 3rem 0;
+}
+
+.value-item {
+    width: 30%;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #3b82f6;
+}
+
+.value-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+}
+
+.value-desc {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.cta-container {
+    background: linear-gradient(135deg, #3b82f6, #10b981);
+    border-radius: 15px;
+    padding: 3rem 2rem;
+    text-align: center;
+    color: white;
+    margin-top: 4rem;
+}
+
+.cta-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-text {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    background: white;
+    color: #3b82f6;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive adjustments for About section */
+@media (max-width: 768px) {
+    .about-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-content {
+        font-size: 1.1rem;
+    }
+    
+    .stat-item {
+        width: 45%;
+    }
+    
+    .value-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-header h1 {
+        font-size: 2rem;
+    }
+    
+    .stat-item {
+        width: 100%;
+    }
+}
