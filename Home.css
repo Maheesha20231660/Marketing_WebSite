@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -51,6 +51,7 @@ header {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
+    
 }
 
 .nav-links {
@@ -179,15 +180,12 @@ header {
     background-color: var(--background-light);
     padding: 4rem 0;
     font-size: 45px;
-    font-family: 'Courier New', Courier, monospace;
     margin-left: 15px;
     align-items: center;
     text-align: center;
 }
 .aboutUs_para{
     font-size: 20px;
-    font-style: italic;
-    font-family: 'Courier New', Courier, monospace;
     margin-left: 15px;
     margin-right: 15px;
     align-items: center;
@@ -238,38 +236,132 @@ header {
         color: white;
     }
 
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #6c5ce7, #a29bfe);
+}
+
+.service-card h3 {
+    font-size: 24px;
+    color: #333;
+    margin: 20px 0;
+    font-weight: 600;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0ff;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.service-icon i {
+    font-size: 32px;
+    color: #6c5ce7;
+}
+
+.learn-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f0f0ff;
+    color: #6c5ce7;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.learn-more:hover {
+    background-color: #6c5ce7;
+    color: white;
+}
+
+.service-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* Animation classes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* Responsive Styles for services section */
+@media (max-width: 768px) {
     .services-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        grid-template-columns: 1fr;
     }
-
-    .service-item {
-        background-color: white;
-        padding: 25px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
+    
+    .tab-container {
+        flex-wrap: wrap;
     }
-
-    .service-item:hover {
-        transform: scale(1.05);
+    
+    .tab-button {
+        margin-bottom: 10px;
     }
-
-    .service-item h3 {
-        color: #6a5acd;
-        margin-bottom: 15px;
+    
+    .services-header h1 {
+        font-size: 32px;
     }
-
-    .service-item p {
-        color: #666;
-    }
-
-    @media (max-width: 768px) {
-        .services-grid {
-            grid-template-columns: 1fr;
-        }
-    }
+}
 
 /* Features Section */
 .features, .solutions, .industries {
