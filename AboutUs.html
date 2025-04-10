@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SparkM6 Solutions - About Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .about-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .about-header h1 {
+            font-size: 3.5rem;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .about-header h1::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #10b981);
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+        
+        .highlight {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+        }
+        
+        .stat-item {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            width: 230px;
+            margin: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3b82f6;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: #64748b;
+        }
+        
+        .team-container {
+            margin: 4rem 0;
+        }
+        
+        .team-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: #1e293b;
+        }
+        
+        .team-description {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        .cta-container {
+            background: linear-gradient(135deg, #3b82f6, #10b981);
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: white;
+            margin-top: 4rem;
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-text {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #3b82f6;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .company-values {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 3rem 0;
+        }
+        
+        .value-item {
+            width: 30%;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .value-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #3b82f6;
+        }
+        
+        .value-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+        
+        .value-desc {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .about-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                font-size: 1.1rem;
+            }
+            
+            .stat-item {
+                width: 45%;
+            }
+            
+            .value-item {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .about-header h1 {
+                font-size: 2rem;
+            }
+            
+            .stat-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="about-container">
+        <div class="about-header fade-in">
+            <h1>About Us</h1>
+        </div>
+        
+        <div class="about-content fade-in">
+            <p>We started in 2024 as a small software development agency. <span class="highlight">SparkM6 Solutions</span> is a leading provider of custom software development services. We specialize in delivering innovative solutions that help businesses streamline their operations and achieve their goals. Our team of experts has extensive experience in developing software for a wide range of industries, from healthcare to finance to manufacturing. Whether you need a mobile app, a web application, or an enterprise management system, we have the skills and expertise to bring your vision to life.</p>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stat-item fade-in">
+                <div class="stat-number" id="projects-count">0</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            
+            <div class="stat-item fade-in">
+                <div class="stat-number" id="clients-count">0</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            
+            <div class="stat-item fade-in">
+                <div class="stat-number" id="team-count">0</div>
+                <div class="stat-label">Team Members</div>
+            </div>
+            
+            <div class="stat-item fade-in">
+                <div class="stat-number" id="years-count">0</div>
+                <div class="stat-label">Years of Innovation</div>
+            </div>
+        </div>
+        
+        <div class="team-container">
+            <h2 class="team-title fade-in">Our Values</h2>
+            <p class="team-description fade-in">At SparkM6 Solutions, we're guided by a set of core values that define who we are and how we work.</p>
+            
+            <div class="company-values">
+                <div class="value-item fade-in">
+                    <div class="value-icon">⭐</div>
+                    <h3 class="value-title">Excellence</h3>
+                    <p class="value-desc">We strive for excellence in every project we undertake, ensuring the highest quality of work.</p>
+                </div>
+                
+                <div class="value-item fade-in">
+                    <div class="value-icon">🤝</div>
+                    <h3 class="value-title">Collaboration</h3>
+                    <p class="value-desc">We believe in working closely with our clients to understand their unique needs and challenges.</p>
+                </div>
+                
+                <div class="value-item fade-in">
+                    <div class="value-icon">💡</div>
+                    <h3 class="value-title">Innovation</h3>
+                    <p class="value-desc">We embrace new technologies and approaches to deliver cutting-edge solutions.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-container fade-in">
+            <h2 class="cta-title">Ready to Transform Your Business?</h2>
+            <p class="cta-text">Contact us today to learn more about how we can help your business succeed with innovative software solutions tailored to your needs.</p>
+            <button class="cta-button" id="contact-button">Get in Touch</button>
+        </div>
+    </div>
+    
+    <script>
+        // Fade-in animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(function(element) {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+            
+            // Initial check on page load
+            fadeInOnScroll();
+            
+            // Check on scroll
+            window.addEventListener('scroll', fadeInOnScroll);
+            
+            // Counting animation for stats
+            function animateCounter(elementId, target, duration) {
+                const element = document.getElementById(elementId);
+                let startTime = null;
+                
+                function animate(currentTime) {
+                    if (!startTime) startTime = currentTime;
+                    const progress = Math.min((currentTime - startTime) / duration, 1);
+                    const value = Math.floor(progress * target);
+                    element.textContent = value;
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        element.textContent = target;
+                    }
+                }
+                
+                requestAnimationFrame(animate);
+            }
+            
+            // Start animations when stats section comes into view
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Start counter animations
+                        animateCounter('projects-count', 87, 2000);
+                        animateCounter('clients-count', 52, 2000);
+                        animateCounter('team-count', 25, 2000);
+                        animateCounter('years-count', 1, 2000);
+                        
+                        // Unobserve after triggering
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            // Observe the stats container
+            statsObserver.observe(document.querySelector('.stats-container'));
+            
+            // Click handler for CTA button
+            document.getElementById('contact-button').addEventListener('click', function() {
+                alert('Thank you for your interest in SparkM6 Solutions! Our contact form will be available soon.');
+            });
+        });
+    </script>
+</body>
+</html>
